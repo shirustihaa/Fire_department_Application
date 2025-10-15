@@ -23,7 +23,7 @@ const controller={
             const {email,password}=req.body;
             const User=await userModel.findOne({email})
             if(!User){
-                res.json('user not found')
+                res.json('User not found')
             }
             else{
 
@@ -31,13 +31,13 @@ const controller={
                     res.json('logged in');
                 }
                 else{
-                    res.json('Password incorrect');
+                    res.json('Password Incorrect.try again');
                 }
             }
 
         }
         catch(error){
-            console.log('Error at login',error);
+            console.log('Error loggingin',error);
             res.json('Internal Server Error');
         }
     }
